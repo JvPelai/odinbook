@@ -2,15 +2,15 @@
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
+  <%= form.label :body%>
+  <%= form.text_area :body , placeholder: "What are you thinking?", size: "50x10"%>
   <div class="actions">
     <%= form.submit %>
   </div>
