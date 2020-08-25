@@ -67,3 +67,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #devise for managing users 
 gem 'devise'
+
+#faker for populating db
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

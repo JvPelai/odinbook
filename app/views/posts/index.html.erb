@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 <%= link_to "Register" ,new_user_registration_path%>
+<%= link_to "find people", users_path %>
 <h1 style="color:teal;">Posts</h1>
-<table>
-  <thead>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <tr>
-          <td>
-            <%= post.body %>
-          </td>
-        </tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <%= post.user.email%>
+      <br>
+      <br>
+      <%= post.body %>
+      <br>
+      <br>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <br>
+    <br>
+  <% end %>
+</tbody>
 <br>
 <%= link_to 'New Post', new_post_path %>

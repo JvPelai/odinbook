@@ -1,0 +1,9 @@
+<h1>All users</h1>
+<% @users.each do |user| %>
+  <p>
+    <%= link_to "#{user.email}", "users/#{user.id}", method: "get" %>
+    <%= "Send friend request"%>
+  </p>
+  <br>
+<% end %>
+<%= link_to "back", root_path%>
